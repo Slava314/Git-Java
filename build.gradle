@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'ru.hse.fmcs'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'com.github.pcj:google-options:1.0.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+}
+
+application {
+    mainClass = 'ru.hse.fmcs.client.Git'
+}
+
+compileJava.options.release.set(11)
+
+test {
+    useJUnitPlatform()
+}
